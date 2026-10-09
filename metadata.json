@@ -1,0 +1,6 @@
+{
+  "name": "FCIS — Factory Compliance Intelligence System",
+  "description": "Industrial evidence, standards readiness, and quality traceability platform for electronics manufacturers with deterministic compliance rules and dependency graph.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

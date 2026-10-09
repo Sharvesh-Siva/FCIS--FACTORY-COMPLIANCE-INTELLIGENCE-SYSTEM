@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+ * CSS Print Media Queries for Standardized PDF Dossier Export
+ * ------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 12mm 14mm 12mm;
+  }
+
+  /* Reset layout constraints for clean multi-page document export */
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide screen-only chrome elements */
+  nav,
+  header,
+  aside,
+  footer,
+  .print\:hidden,
+  .no-print,
+  button,
+  input,
+  select {
+    display: none !important;
+  }
+
+  /* Maximize main content container width without shadows or screen borders */
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  /* Remove screen borders and shadows from printable report card */
+  .readiness-report-container {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Page break rules for structured technical records */
+  .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .avoid-page-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Tables: repeat column headers across page breaks */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  th, td {
+    border: 1px solid #cbd5e1 !important;
+    padding: 6px 8px !important;
+    color: #0f172a !important;
+  }
+
+  /* High contrast border rules for institutional report tables */
+  .border,
+  .border-2,
+  .border-b,
+  .border-t {
+    border-color: #94a3b8 !important;
+  }
+
+  /* Ensure colors and backgrounds render in PDF printer */
+  .bg-slate-50,
+  .bg-slate-100 {
+    background-color: #f8fafc !important;
+  }
+
+  .bg-rose-50 {
+    background-color: #fff1f2 !important;
+  }
+
+  .bg-amber-50 {
+    background-color: #fffbeb !important;
+  }
+
+  .bg-emerald-50 {
+    background-color: #f0fdf4 !important;
+  }
+
+  .text-rose-900,
+  .text-rose-950 {
+    color: #881337 !important;
+  }
+
+  .text-emerald-900 {
+    color: #064e3b !important;
+  }
+}
